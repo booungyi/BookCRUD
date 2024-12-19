@@ -1,9 +1,7 @@
 package booung.Api.Book.CRUD;
 
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class BookRestController {
@@ -16,7 +14,14 @@ public class BookRestController {
     }
 
     @PostMapping("/product")
-    public void create(@Valid @RequestBody Book book) {
-        bookService.create(book);
+    public void create(@Valid @RequestBody CreateBookRequest createBookRequest) {
+
+        bookService.create(createBookRequest);
     }
+
+//    @GetMapping("/product")
+//    public void seviceget(@PathVariable CreateBookRequest createBookRequest) {
+//        Book book = new Book();
+//        book.
+//    }
 }
